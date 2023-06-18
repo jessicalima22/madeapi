@@ -1,4 +1,3 @@
-import axios from "axios";
 import React, {useState, useEffect} from "react";
 
 
@@ -6,11 +5,17 @@ export default function carList(){
  const [cars, setCars]=useState([])
 
  useEffect(()=>{
-    axios.get('https://1stapireact.jessicalima22.repl.co')
-        .then(res=>{
-            const dataCars = res.data
-            setCars(dataCars)
-        })
+
+    fetch('https://1stapireact.jessicalima22.repl.co',{
+        mode: "no-cors",
+    })
+    .then((res)=>res.json())
+    .then(
+        (result)=>{
+            setCars(result)
+        }
+    )
+
  })
 
     return(
