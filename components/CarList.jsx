@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from "react";
 
 
-export default function carList(){
+export default function CarList(){
  const [cars, setCars]=useState([])
 
      useEffect(()=>{
@@ -19,9 +19,11 @@ export default function carList(){
         <div>
 
             <h1>Calling API via REPL</h1>
+            <p>
             {cars.map(
                 car=> <div key={car.id}>{car.brand} - {car.model} </div>
-            )}  
+            )} 
+            </p>
         </div>
     )
  
